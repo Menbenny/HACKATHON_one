@@ -1,29 +1,15 @@
-// Food list 
-
-// English array 
-// dishes: 
-// Pizza
-// Sushi
-// Tacos
-// Spaghetti
-// Biryani
-// Burger
-// Fried Chicken
-// Falafel
-// Paella
-// Kimchi // 10
-
-// DISHES HEBREW:
-// פיצה
-// סושי
-// טאקוס
-// ספגטי
-// ביריאני
-// המבורגר
-// פרייד צ'יקן
-// פלאפל
-// פאייה
-// קימצ'י
+Foods English
+ dishes: 
+Pizza
+Sushi
+Tacos
+Spaghetti
+Biryani
+Burger
+Fried Chicken
+Falafel
+Paella
+Kimchi
 
 // Fruits:
 // Apple
@@ -35,7 +21,33 @@
 // Grapes
 // Blueberry
 // Watermelon
-// Kiwi //10 
+// Kiwi
+
+// vegetables:
+// Carrot
+// Broccoli
+// Spinach
+// Cauliflower
+// Bell Pepper
+// Tomato
+// Zucchini
+// Eggplant
+// Kale
+// Cabbage
+
+Food Hebrew: 
+dishes:
+// DISHES HEBREW:
+// פיצה
+// סושי
+// טאקוס
+// ספגטי
+// ביריאני
+// המבורגר
+// פרייד צ'יקן
+// פלאפל
+// פאייה
+// קימצ'י
 
 // Fruits Hebrew:
 // תפוח
@@ -50,18 +62,6 @@
 // קיווי
 
 
-// vegetables:
-// Carrot
-// Broccoli
-// Spinach
-// Cauliflower
-// Bell Pepper
-// Tomato
-// Zucchini
-// Eggplant
-// Kale
-// Cabbage //10
-
 // vegetables: Hebrew
 // גזר
 // ברוקולי
@@ -73,5 +73,3 @@
 // חציל
 // כרוב עלים
 // כרוב
-
-// total 30
