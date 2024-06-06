@@ -11,29 +11,29 @@ Falafel
 Paella
 Kimchi
 
-// Fruits:
-// Apple
-// Banana
-// Orange
-// Strawberry
-// Mango
-// Pineapple
-// Grapes
-// Blueberry
-// Watermelon
-// Kiwi
+Fruits:
+Apple
+Banana
+Orange
+Strawberry
+Mango
+Pineapple
+Grapes
+Blueberry
+Watermelon
+Kiwi
 
-// vegetables:
-// Carrot
-// Broccoli
-// Spinach
-// Cauliflower
-// Bell Pepper
-// Tomato
-// Zucchini
-// Eggplant
-// Kale
-// Cabbage
+vegetables:
+Carrot
+Broccoli
+Spinach
+Cauliflower
+Bell Pepper
+Tomato
+Zucchini
+Eggplant
+Kale
+Cabbage
 
 Food Hebrew: 
 dishes:
