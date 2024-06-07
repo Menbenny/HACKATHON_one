@@ -10,6 +10,8 @@
 // }
 // startGame()
 
+
+
 document.getElementById('startButton').addEventListener('click', function() {
     document.getElementById('placeholder').style.display = 'block';
   });
