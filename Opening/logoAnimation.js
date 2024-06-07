@@ -1,6 +1,6 @@
 // LOGO ANIMATION
 document.addEventListener('DOMContentLoaded', function() {
-    const logoText = "T A G"; // Text for the logo with spaces
+    const logoText = "  T  A  G  "; //
     const logoElement = document.getElementById('logo');
     let isTyping = true;
 
