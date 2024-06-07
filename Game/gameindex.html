@@ -9,17 +9,58 @@
 </head>
 <body>
 
-    <h1>testing</h1>
+    <div class="heading">
+        <h1 class="welcomeMessage">WELCOME <span id="displayInput"></span></h1>
+    </div>
+        
+    <div class="main">
+        <div class="GameName">
+            <h1>WORD GUESS</h1>
+        </div>
+                
+        <div class="description">
+            <h4>Guess an English word and it's Hebrew translation</h4>
+        </div>
 
-    <h1>Guessing game</h1>
-    <div class="word" id="word"></div>
-    <div class="letters" id="letters"></div>
-    <div class="options" id="options"></div>
-    <div id="winMessage"></div>
-    <div class="winMessage_2"></div>
-    <button id="hint" onclick="showHint()">Hint</button>
-    <div id="hintContainer"></div>
-    <button id="start" onclick="initializeGame()">Restart</button>
+        <div class="Instrucions">
+            <p>Given the first letter of the word, guess the rest of the letters to complete the word</p>
+            <p>Click on Hint for Hints about the word</p>
+        </div>
+
+        <div class="winMessage">
+            <div id="winMessage"></div>
+            <div class="winMessage_2"></div>
+        </div>
+
+        <div class="wordSpace">
+            <div class="word" id="word"></div>
+        </div>
+        <!--  -->
+        <div class="optionsDiv">
+            <div class="options" id="options"></div>
+        </div>
+        <!--  -->
+        <div class="buttons">
+            <div class="hint">
+                <button id="hint" onclick="showHint()">Hint</button>
+                <div id="hintContainer"></div>
+            </div>
+            <div class="restart">
+                <button id="start" onclick="initializeGame()">Restart</button>
+            </div>
+        </div>
+      
+    </div>
+
+
+
+
+
+    <!-- <div class="letters" id="letters"></div> -->
+    
+   
+   
+    
   
     <!--  -->
 

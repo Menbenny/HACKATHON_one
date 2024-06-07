@@ -8,13 +8,36 @@ const foodEnglish = [
 
 const foodsHebrew = [
   "פיצה", "סושי", "טאקוס", "ספגטי", "ביריאני", "המבורגר", "פרייד צ'יקן", "פלאפל", "פאייה", "קימצ'י",
-  "תפוח", "בננה", "תפוז", "תות שדה", "מנגו", "אננס", "ענבים", "אוכמניות", "אבטיח", "קיווי",
+  "תפוח", "בננה", "תפוז", "תות שדה", "מנגו", "אננס", "ענבים", "אוכמנית", "אבטיח", "קיווי",
   "גזר", "ברוקולי", "תרד", "כרובית", "פלפל", "עגבניה", "קישוא", "חציל", "כרוב עלים", "כרוב"
 ];
 
 let word = '';
 let guessedLetters = [];
 let wordIndex;
+
+// document.addEventListener('DOMContentLoaded', () => {
+//   const userName = localStorage.getItem('userName');
+//   if (userName) {
+//     document.getElementById('displayInput').textContent = userName;
+//   } else {
+//     document.getElementById('displayIntput').textContent = `Player 1`
+//   }
+// })
+
+const playerName = localStorage.getItem('userName');
+        
+// Display player name using DOM
+const playerNameElement = document.getElementById('displayInput');
+playerNameElement.textContent = `${playerName}`;
+
+
+
+
+
+
+
+// ##########################
 
 function initializeGame() {
   // Reset variables
