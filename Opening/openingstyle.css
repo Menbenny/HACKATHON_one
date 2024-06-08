@@ -4,6 +4,33 @@
     padding: 0px;
 }
 
+.colorEffect {
+	background: linear-gradient(-45deg, #ffc61c, #ffc107, #ffffff, #ffffff);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+}
+
+.colorEffect_modal {
+	background: linear-gradient(-45deg, #e9d39080, #ffe9a790, #ffffff, #ffffff);
+	background-size: 400% 400%;
+	animation: gradient 5s ease infinite;
+	
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+
 #startButton {
     text-decoration: none;
     padding: 10px;
@@ -16,6 +43,8 @@ nav ul {
     overflow: hidden;
     /* background-color: #333; */
 }
+
+
 
 nav ul li {
     float: left;
@@ -31,5 +60,20 @@ nav ul li a {
 
 nav ul li a:hover {
     background-color: #111;
+}
+
+#placeholder {
+    display: flex;
+    flex-direction: column;
+}
+
+.links li {
+    list-style: none;
+    
+}
+
+.links a {
+    text-decoration: none;
+    color: black;
 }
 
