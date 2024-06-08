@@ -16,40 +16,24 @@ let word = '';
 let guessedLetters = [];
 let wordIndex;
 
-// document.addEventListener('DOMContentLoaded', () => {
-//   const userName = localStorage.getItem('userName');
-//   if (userName) {
-//     document.getElementById('displayInput').textContent = userName;
-//   } else {
-//     document.getElementById('displayIntput').textContent = `Player 1`
-//   }
-// })
-
 const playerName = localStorage.getItem('userName');
         
-// Display player name using DOM
+
 const playerNameElement = document.getElementById('displayInput');
 playerNameElement.textContent = `${playerName}`;
 
-playerNameElement.style.color = '#ffc107';
-playerNameElement.style.textShadow = '10px 1px 10px black'
+playerNameElement.style.color = '#ffa000';
+playerNameElement.style.textShadow = '2px 1px 1px black'
 playerNameElement.style.fontFamily = ''
 
 
-
-
-
-
-
-// ##########################
-
 function initializeGame() {
-  // Reset variables
+  
   wordIndex = Math.floor(Math.random() * foodEnglish.length);
   word = foodEnglish[wordIndex].toUpperCase();
   guessedLetters = [];
 
-  // Display word with first letter revealed and other letters hidden
+  
   let wordDisplay = word[0];
   for (let i = 1; i < word.length; i++) {
     if (word[i] === ' ') {
@@ -60,21 +44,21 @@ function initializeGame() {
   }
   document.getElementById('word').textContent = wordDisplay;
 
-  // Clear previous hint, win message, and options
+  
   document.getElementById('hintContainer').innerHTML = '';
   document.getElementById('winMessage').textContent = '';
   document.getElementById('options').innerHTML = '';
 
-  // Remove previous event listener to avoid duplicates
+  
   document.removeEventListener('keydown', handleKeyPress);
 
-  // Listen for keydown events
+  
   document.addEventListener('keydown', handleKeyPress);
 }
 
 function handleKeyPress(event) {
   let letter = event.key.toUpperCase();
-  // Check if the pressed key is a letter
+  
   if (/[A-Z]/.test(letter)) {
     checkLetter(letter);
   }
@@ -86,8 +70,11 @@ function checkLetter(letter) {
     return;
   }
 
+
+
   guessedLetters.push(letter);
   let wordDisplay = word[0];
+  
   let found = false;
   for (let i = 1; i < word.length; i++) {
     if (word[i] === letter) {
@@ -111,7 +98,10 @@ function checkLetter(letter) {
     const winMessage = document.createElement('h1');
     winMessage.textContent = `Congratulations, you have guessed ${wordDisplay} correctly! Now, match it with the correct Hebrew translation.`;
     document.getElementById('winMessage').appendChild(winMessage);
-    setTimeout(showOptions, 1000); // Wait 1 second before showing options
+    setTimeout(showOptions, 1000); 
+    
+    
+
   }
 }
 
@@ -125,7 +115,7 @@ function showHint() {
     hint = 'Hint: It\'s a type of vegetable.';
   }
 
-  // Create a div with class "Hint" and a child p element with the hint message
+  
   const hintContainer = document.getElementById('hintContainer');
   const hintDiv = document.createElement('div');
   hintDiv.className = 'Hint';
@@ -134,19 +124,19 @@ function showHint() {
   hintDiv.appendChild(hintParagraph);
   hintContainer.appendChild(hintDiv);
 
-  // Set timeout to remove the hint after 5 seconds
+  
   setTimeout(() => {
     hintContainer.removeChild(hintDiv);
   }, 5000);
 }
 
-// function levelTwo () {
+
 
   function showOptions() {
   const optionsContainer = document.getElementById('options');
   optionsContainer.innerHTML = '';
 
-  // Generate three random options, one of which is correct
+  
   let correctOption = foodsHebrew[wordIndex];
   let options = [correctOption];
   while (options.length < 3) {
@@ -157,10 +147,10 @@ function showHint() {
     }
   }
 
-  // Shuffle the options array
+  
   options = options.sort(() => Math.random() - 0.5);
 
-  // Create buttons for each option
+  
   options.forEach(option => {
     let button = document.createElement('button');
     button.textContent = option;
@@ -170,7 +160,7 @@ function showHint() {
   });
 }
 
-// showOptions()
+
 
   function checkOption(selectedOption) {
     if (selectedOption === foodsHebrew[wordIndex]) {
