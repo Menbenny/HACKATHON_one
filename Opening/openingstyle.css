@@ -11,6 +11,50 @@
 	height: 100vh;
 }
 
+/* modal falling letters */
+
+.falling_letters {
+    /* height: 100%; */
+    margin: 0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+            background: #00000072;
+    color: #000000;
+}
+
+.falling-letters {
+    position: absolute;
+    width: 100%;
+    /* height: 100%; */
+    /* pointer-events: none; */
+    z-index: 0;
+}
+
+.letter {
+    position: absolute;
+    font-size: 20px;
+    opacity: 0;
+    animation: fall linear infinite;
+    color: #ffc107;
+    pointer-events: none;
+    
+}
+
+.modal-content {
+    z-index: 10;
+}
+
+.modal-backdrop {
+    z-index: 5;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100vh);
+        opacity: 1;
+    }
+}
+
 .colorEffect_modal {
 	background: linear-gradient(-45deg, #e9d39080, #ffe9a790, #ffffff, #ffffff);
 	background-size: 400% 400%;

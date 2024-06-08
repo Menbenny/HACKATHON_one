@@ -4,6 +4,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const logoElement = document.getElementById('logo');
     let isTyping = true;
 
+    logoElement.style.fontSize = '4em'
+    logoElement.style.fontWeight = 'Bold'
+
     // Clear existing content
     logoElement.textContent = '';
 
@@ -45,3 +48,25 @@ document.addEventListener('DOMContentLoaded', function() {
     typeText(0);
 });
 
+// Falling letter animation 
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const container = document.querySelector('.falling-letters');
+    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzקראטוןםפשדגכעיחלךףזסבהנמצתץ";
+
+    function createLetter() {
+        const letter = document.createElement('span');
+        letter.classList.add('letter');
+        letter.style.left = Math.random() * 100 + 'vw';
+        letter.style.animationDuration = Math.random() * 3 + 2 + 's';
+        letter.textContent = letters[Math.floor(Math.random() * letters.length)];
+        container.appendChild(letter);
+
+        setTimeout(() => {
+            letter.remove();
+        }, 5000);
+    }
+
+    setInterval(createLetter, 100);
+});
