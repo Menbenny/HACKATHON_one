@@ -31,6 +31,10 @@ const playerName = localStorage.getItem('userName');
 const playerNameElement = document.getElementById('displayInput');
 playerNameElement.textContent = `${playerName}`;
 
+playerNameElement.style.color = '#ffc107';
+playerNameElement.style.textShadow = '10px 1px 10px black'
+playerNameElement.style.fontFamily = ''
+
 
 
 
@@ -94,7 +98,7 @@ function checkLetter(letter) {
     } else if (guessedLetters.includes(word[i])) {
       wordDisplay += word[i];
     } else {
-      wordDisplay += '_';
+      wordDisplay += '_ ';
     }
   }
   document.getElementById('word').textContent = wordDisplay;
