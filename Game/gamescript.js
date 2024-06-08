@@ -49,9 +49,9 @@ function initializeGame() {
   let wordDisplay = word[0];
   for (let i = 1; i < word.length; i++) {
     if (word[i] === ' ') {
-      wordDisplay += ' ';
+      wordDisplay += '  ';
     } else {
-      wordDisplay += '_';
+      wordDisplay += '_ ';
     }
   }
   document.getElementById('word').textContent = wordDisplay;
