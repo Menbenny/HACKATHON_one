@@ -12,6 +12,9 @@ const foodsHebrew = [
   "גזר", "ברוקולי", "תרד", "כרובית", "פלפל", "עגבניה", "קישוא", "חציל", "כרוב עלים", "כרוב"
 ];
 
+
+
+// global 
 let word = '';
 let guessedLetters = [];
 let wordIndex;
@@ -42,6 +45,7 @@ function initializeGame() {
       wordDisplay += '_ ';
     }
   }
+
   document.getElementById('word').textContent = wordDisplay;
 
   
@@ -50,7 +54,7 @@ function initializeGame() {
   document.getElementById('options').innerHTML = '';
 
   
-  document.removeEventListener('keydown', handleKeyPress);
+  // document.removeEventListener('keydown', handleKeyPress);
 
   
   document.addEventListener('keydown', handleKeyPress);
@@ -94,18 +98,23 @@ function checkLetter(letter) {
     alert('Incorrect guess: ' + letter);
   }
 
+
+  // ! What does the last index (-1) have to do with guessing correctly.
+  // ? Answer: if wordDisplay doesn't include ('_')
+
+  console.log(wordDisplay);
   if (wordDisplay.indexOf('_') === -1) {
     const winMessage = document.createElement('h1');
+
     winMessage.textContent = `Congratulations, you have guessed ${wordDisplay} correctly! Now, match it with the correct Hebrew translation.`;
     document.getElementById('winMessage').appendChild(winMessage);
     setTimeout(showOptions, 1000); 
-    
-    
-
   }
 }
 
 function showHint() {
+
+  // Make more readable 
   let hint = '';
   if (wordIndex >= 0 && wordIndex < 10) {
     hint = 'Hint: It\'s a type of dish.';
@@ -117,16 +126,16 @@ function showHint() {
 
   
   const hintContainer = document.getElementById('hintContainer');
-  const hintDiv = document.createElement('div');
-  hintDiv.className = 'Hint';
+ 
+  
   const hintParagraph = document.createElement('p');
   hintParagraph.textContent = hint;
-  hintDiv.appendChild(hintParagraph);
-  hintContainer.appendChild(hintDiv);
+  
+  hintContainer.appendChild(hintParagraph);
 
   
   setTimeout(() => {
-    hintContainer.removeChild(hintDiv);
+    hintContainer.removeChild(hintParagraph);
   }, 5000);
 }
 
@@ -138,10 +147,14 @@ function showHint() {
 
   
   let correctOption = foodsHebrew[wordIndex];
+
   let options = [correctOption];
+
+  // ! review - why the options.push(randomOption)
   while (options.length < 3) {
     let randomIndex = Math.floor(Math.random() * foodsHebrew.length);
     let randomOption = foodsHebrew[randomIndex];
+
     if (!options.includes(randomOption)) {
       options.push(randomOption);
     }
@@ -150,7 +163,8 @@ function showHint() {
   
   options = options.sort(() => Math.random() - 0.5);
 
-  
+  // This creates buttons for the hebrew options 
+
   options.forEach(option => {
     let button = document.createElement('button');
     button.textContent = option;
@@ -161,6 +175,8 @@ function showHint() {
 }
 
 
+// Create a div with DOM and render the win messages inside the DOM
+
 
   function checkOption(selectedOption) {
     if (selectedOption === foodsHebrew[wordIndex]) {
@@ -170,7 +186,6 @@ function showHint() {
       alert('Incorrect. Try again.');
       showOptions();
     }
-    
   }
 
 

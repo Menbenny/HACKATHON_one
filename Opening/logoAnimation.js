@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     logoElement.style.fontSize = '4em'
     logoElement.style.fontWeight = 'Bold'
 
-    // Clear existing content
+    
     logoElement.textContent = '';
 
     // Convert spaces to underscores
