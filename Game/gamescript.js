@@ -31,6 +31,8 @@ playerNameElement.style.fontFamily = ''
 
 
 function initializeGame() {
+
+  
   
   wordIndex = Math.floor(Math.random() * foodEnglish.length);
   word = foodEnglish[wordIndex].toUpperCase();
@@ -60,12 +62,16 @@ function initializeGame() {
   document.addEventListener('keydown', handleKeyPress);
 }
 
+let lists = foodEnglish + foodsHebrew
+
 function handleKeyPress(event) {
   let letter = event.key.toUpperCase();
   
-  if (/[A-Z]/.test(letter)) {
+  if ( /^[a-zA-Z]+$/.test(letter)) {
     checkLetter(letter);
   }
+
+  // ! Exclude other keys. Only listen on key letters 
 }
 
 function checkLetter(letter) {
@@ -102,7 +108,7 @@ function checkLetter(letter) {
   // ! What does the last index (-1) have to do with guessing correctly.
   // ? Answer: if wordDisplay doesn't include ('_')
 
-  console.log(wordDisplay);
+  
   if (wordDisplay.indexOf('_') === -1) {
     const winMessage = document.createElement('h1');
 
@@ -180,12 +186,28 @@ function showHint() {
 
   function checkOption(selectedOption) {
     if (selectedOption === foodsHebrew[wordIndex]) {
-      alert('Correct! You matched the English word with its Hebrew translation.');
-      initializeGame();
+   
+      const finalWinMessage = document.createElement('h1')
+      finalWinMessage.textContent = 'FINAL MESSAGE'
+      const hebrewFinal = document.getElementById('hebrewFinal')
+      hebrewFinal.appendChild(finalWinMessage)
+      
+      clear = () => {
+        hebrewFinal.removeChild()
+      }
+      setInterval(initializeGame(clear), 3000)
+
+
     } else {
-      alert('Incorrect. Try again.');
+    
+
+      const looseMessage = document.createElement('h1')
+      looseMessage.textContent = 'Incorrect. Try again.'
+      winDiv.appendChild(looseMessage)
+
       showOptions();
     }
+    
   }
 
 
