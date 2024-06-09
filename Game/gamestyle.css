@@ -3,7 +3,7 @@ body {
 }
 
 .background {
-  background-image: url('/HACKATHON_one/Game/images/background_image_Game_index.png');
+  background-image: url('/Game/images/Background_SVG.svg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

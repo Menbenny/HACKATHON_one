@@ -4,12 +4,59 @@
     padding: 0px;
 }
 
-.colorEffect {
+/* .colorEffect {
+    
 	background: linear-gradient(-45deg, #ffc61c94, #ffc107b7, #ffffff, #ffffff);
 	background-size: 400% 400%;
 	animation: gradient 15s ease infinite;
 	height: 100vh;
+    z-index: -1;
+
+}  */
+
+
+.background {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url('/Opening/opening_background_image.png');
+    background-size: cover;
+    background-position: center;
 }
+
+.background::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-45deg, #ffc61c94, #ffc107b7, #ffffff, #ffffff);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    opacity: 0.8; /* Adjust the opacity as needed */
+    z-index: -1;
+}
+
+.center-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
 
 /* modal falling letters */
 
@@ -50,7 +97,7 @@
 
 @keyframes fall {
     0% {
-        transform: translateY(-100vh);
+        transform: translateY(-100vh) rotate(-360deg);
         opacity: 1;
     }
 }
