@@ -25,8 +25,8 @@ const playerName = localStorage.getItem('userName');
 const playerNameElement = document.getElementById('displayInput');
 playerNameElement.textContent = `${playerName}`;
 
-playerNameElement.style.color = '#ffa000';
-playerNameElement.style.textShadow = '2px 1px 1px black'
+playerNameElement.style.color = '#0d6efd';
+playerNameElement.style.fontWeight = 'bold';
 playerNameElement.style.fontFamily = ''
 
 
@@ -110,7 +110,7 @@ function checkLetter(letter) {
 
   
   if (wordDisplay.indexOf('_') === -1) {
-    const winMessage = document.createElement('h1');
+    const winMessage = document.createElement('h6');
 
     winMessage.textContent = `Congratulations, you have guessed ${wordDisplay} correctly! Now, match it with the correct Hebrew translation.`;
     document.getElementById('winMessage').appendChild(winMessage);
@@ -174,9 +174,11 @@ function showHint() {
   options.forEach(option => {
     let button = document.createElement('button');
     button.textContent = option;
-    button.className = 'option';
+    button.className = 'option btn btn-primary p-3 m-2';
     button.onclick = () => checkOption(option);
     optionsContainer.appendChild(button);
+
+    
   });
 }
 

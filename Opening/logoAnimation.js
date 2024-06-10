@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     logoElement.textContent = '';
 
-    // Convert spaces to underscores
+    
     const logoTextWithUnderscores = logoText.replace(/ /g, '_');
 
     // Typing animation function

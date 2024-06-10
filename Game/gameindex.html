@@ -26,10 +26,10 @@
             
                 </div>
                 <div class="col">
-                    <h1 class="welcomeMessage">WELCOME <span id="displayInput"></span></h1>
+                    <h1 class="welcomeMessage">WELCOME <span id=""></span></h1>
                 </div>
                 <div class="col">
-                    <h1 class="welcomeMessage"><em></em> <span id="displayInput"></span></h1>
+                    <h1 class="welcomeMessage"><em></em> <span id=""></span></h1>
                 </div>
             </div>
 
@@ -47,6 +47,10 @@
                     
                     </div>
                     <!-- win messages -->
+                    <div class="winMessage p-5">
+                        <div id="winMessage"></div>
+                        <div class="winMessage_2"></div>
+                    </div>
                 </div>
 
                 <!-- ! CENTER -->
@@ -54,10 +58,7 @@
                     <div class="description">
                         <h4>Guess an English word and then it's Hebrew translation</h4>
                     </div>
-                    <div class="winMessage p-5">
-                        <div id="winMessage"></div>
-                        <div class="winMessage_2"></div>
-                    </div>
+                    
                     
                     <div class="finalWin">
                         <div id="hebrewFinal"></div>
@@ -67,13 +68,13 @@
                         <div class="word" id="word"></div>
                     </div>
                     <!--  -->
-                    <div class="optionsDiv">
-                        <div class="options" id="options"></div>
+                    <div class="optionsDiv p-5">
+                        <div class="options p-2" id="options"></div>
                     </div>
                     <div class="buttons">
                     
                         <div class="restart">
-                            <button id="start" onclick="initializeGame()">Restart</button>
+                            <button class="btn btn-warning" id="start" onclick="initializeGame()">Restart</button>
                         </div>
                     </div>
 
@@ -82,15 +83,24 @@
 
                 <!-- ! RIGHT -->
                 <div class="col-12 col-md-12 col-lg-4 p-3">
+                    <div class="playerDetails">
+                        <hr>
+                        <h6><b>Player name:</b> <span id="displayInput"></span></h6>
+                        <hr>
+                    </div>
                     <div class="Instrucions">
                         <p>Given the first letter of the word, guess the rest of the letters to complete the word</p>
                     
                     </div>
                     <p>Click on Hint for Hints about the word</p>
-                    <div class="hint col-2 p-5">
-                        <button id="hint" onclick="showHint()">Hint</button>
-                        <div id="hintContainer"></div>
+                    
+                    <div class="row p-4">
+                        <div class="hint col-12 p-5">
+                            <button class="btn btn-outline-warning" id="hint" onclick="showHint()">Hint</button>
+                            <div id="hintContainer"></div>
+                        </div>
                     </div>
+                    
                 </div>
             </div>
         </div>
