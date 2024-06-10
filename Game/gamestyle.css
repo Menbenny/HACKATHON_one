@@ -12,36 +12,50 @@ body {
   width: 100vw;
 }
   
-  .word {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  .letters {
-    margin-top: 20px;
-  }
-  .letters button {
-    font-size: 16px;
-    padding: 5px 10px;
-    margin: 5px;
-    cursor: pointer;
-  }
+.word {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.letters {
+  margin-top: 20px;
+}
+.letters button {
+  font-size: 16px;
+  padding: 5px 10px;
+  margin: 5px;
+  cursor: pointer;
+}
 
-  .letter-box {
-    display: inline-block;
-    width: 30px; /* Adjust the width as needed */
-    height: 30px; /* Adjust the height as needed */
-    border: 1px solid black;
-    margin-right: 5px; /* Adjust spacing between boxes */
-    text-align: center;
-    line-height: 30px; /* Align text vertically */
-    background-color: #ffc107; /* Yellow color */
-  }
-  
-  #hint {
-    margin-top: 20px;
-  }
+.letter-box {
+  display: inline-block;
+  width: 30px; /* Adjust the width as needed */
+  height: 30px; /* Adjust the height as needed */
+  border: 1px solid black;
+  margin-right: 5px; /* Adjust spacing between boxes */
+  text-align: center;
+  line-height: 30px; /* Align text vertically */
+  background-color: #ffc107; /* Yellow color */
+}
 
-  .main {
-    background-color: rgba(255, 255, 255, 0.739);
+#hint {
+  margin-top: 20px;
+}
 
-  }
+#main {
+	background: linear-gradient(-45deg, #e9d39080, #ffe9a7, #ffffffc0, #ffffffad);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
