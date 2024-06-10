@@ -133,11 +133,11 @@ function showHint() {
   // Make more readable 
   let hint = '';
   if (wordIndex >= 0 && wordIndex < 10) {
-    hint = 'Hint: It\'s a type of dish.';
+    hint = 'It\'s a type of dish.';
   } else if (wordIndex >= 10 && wordIndex < 20) {
-    hint = 'Hint: It\'s a type of fruit.';
+    hint = 'It\'s a type of fruit.';
   } else if (wordIndex >= 20 && wordIndex < 30) {
-    hint = 'Hint: It\'s a type of vegetable.';
+    hint = 'It\'s a type of vegetable.';
   }
 
   
