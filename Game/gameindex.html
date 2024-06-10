@@ -26,13 +26,16 @@
             <div class="row p-5">
                 <div class="col">
                   
-                    <h1 id="logo">
-                        
-                    </h1>
+                    <!-- <h1 id="logo"> -->
+                        <a href="/Opening/openingindex.html" id="logo" ></a>
+                    <!-- </h1> -->
             
                 </div>
-                <div class="col">
-                    <h1 class="zen welcomeMessage"> WELCOME <span id=""></span></h1>
+                <div class="col-4 offset-1">
+                    <marquee behavior="slide" direction="down" scrollamount="10">
+
+                        <h1 class="zen welcomeMessage"> WELC<span class="gameName">O</span>ME</h1>
+                    </marquee>
                 </div>
                 <div class="col">
                     <h1 class="welcomeMessage"><em></em> <span id=""></span></h1>
@@ -43,9 +46,11 @@
 
                 <!-- ! LEFT -->
                 <div class="col-12 col-md-12 col-lg-4 p-3">
-                    <div class="GameName ">
+                
+                    <div class="gameName ">
                         <h1 class="zen">TAKE A GUESS</h1>
                     </div>
+                
                     <div class="Instrucions">
                         <p>
                             This game is made for beginning Hebrew learners 
@@ -62,43 +67,43 @@
                     </div>
                     
                 </div>
-
                 <!-- ! CENTER -->
                 <div class="col-12 col-md-12 col-lg-4 p-5 rounded-5 main" >
-                    <div class="description">
-                        <h4>Guess the English in word</h4>
-                    </div>
-
-                    <!-- win messages -->
-                    <div class="winMessage p-5 ">
-                        <div id="winMessage"></div>
-                        <br>
-                        <div class="winMessage_2"></div>
-                    </div>
-
                     
-                    
-                    
-                    <div class="finalWin">
-                        <div id="hebrewFinal"></div>
-                    </div>
-        
-                    <div class="wordSpace p-5">
-                        <div class="word" id="word"></div>
-                    </div>
-                    <!--  -->
-                    <div class="optionsDiv p-2">
-                        <div class="options p-2" id="options"></div>
-                    </div>
-                    <div class="buttons">
-                    
-                        <div class="restart">
-                            <button class="btn btn-warning" id="start" onclick="initializeGame()">Restart</button>
+                        <div class="description">
+                            <h4>Guess the English in word</h4>
                         </div>
-                    </div>
+
+                        <!-- win messages -->
+                        <div class="winMessage p-2 ">
+                            <div id="winMessage"></div>
+                            <br>
+                            <div class="winMessage_2"></div>
+                        </div>
+
+                        
+                        
+                        
+                        
+                        <div class="finalWin">
+                            <div id="hebrewFinal"></div>
+                        </div>
+            
+                        <div class="wordSpace p-3">
+                            <div class="word" id="word"></div>
+                        </div>
+                        <!--  -->
+                        <div class="optionsDiv p-2">
+                            <div class="options p-2" id="options"></div>
+                        </div>
+                        <div class="buttons">
+                        
+                            <div class="restart">
+                                <button class="btn btn-warning" id="start" onclick="initializeGame()">Restart</button>
+                            </div>
+                        </div>
 
                 </div>
-
 
                 <!-- ! RIGHT -->
                 <div class="col-12 col-md-12 col-lg-4 p-3">
@@ -121,8 +126,8 @@
                         <h6>
                             Let us know what you think
                         </h6>
-                        <input class="p-2 border-0" type="text" placeholder="" style="height: 100%;">
-                        <button class="btn btn-success mt-2">Submit</button>
+                        <input class="p-2 border-0 rounded-3" type="text" placeholder="" style="height: 100%;">
+                        <button class="btn btn-success mt-2" style="opacity: 0.9;">Submit</button>
                     </div>
                     
                 </div>

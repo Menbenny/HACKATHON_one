@@ -207,7 +207,7 @@ function showHint() {
       hebrewFinal.innerHTML = '';
       hebrewFinal.appendChild(finalWinMessage)
       
-      setTimeout(initializeGame, 3000)
+      setTimeout(initializeGame, 5000)
       // setInterval(hebrewFinal.removeChild(finalWinMessage), 3000)
 
 
