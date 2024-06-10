@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const logoElement = document.getElementById('logo');
     let isTyping = true;
 
-    logoElement.style.fontSize = '4em'
+    logoElement.style.fontSize = '1em'
     logoElement.style.fontWeight = 'Bold'
 
     
@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function() {
         letter.style.left = Math.random() * 100 + 'vw';
         letter.style.animationDuration = Math.random() * 3 + 2 + 's';
         letter.textContent = letters[Math.floor(Math.random() * letters.length)];
-        container.appendChild(letter);
+        
 
         setTimeout(() => {
             letter.remove();

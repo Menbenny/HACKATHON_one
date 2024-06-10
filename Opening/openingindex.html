@@ -16,36 +16,6 @@
 <body class="background">
 <div class="colorEffect">
 
-    <div class="navbar p-5">
-        <ul>
-            <li id="logo" ></li>
-        </ul>
-        <ul style="list-style: none;">
-            <li>Take A Guess</li>
-            <span>
-                Make learning a language fun!
-            </span>
-        </ul>
-    </div>
- 
-    <div class="d-flex flex-column container  justify-content-center align-items-center" style="height: 60vh;">
-        <div class="heading">
-            <marquee behavior="slide" direction="right" scrollamount="200"> 
-                <h1 class="display-1 zen">READY TO GUESS?</h1>
-            </marquee> 
-            <marquee behavior="slide" direction="left">
-                <span> <h1 class="display-1"></h1></span>
-            </marquee>
-        </div>
-        <div class="row">
-            <div class="inner col-12">
-                <button id="startButton" type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#myModal">
-                    Start The Game
-                </button>
-            </div>
-        </div>
-        <br>
-    </div>
 
     <!-- Modal -->
     <div class="modal fade  falling_letters " id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -70,16 +40,50 @@
         </div>
     </div>
 
-    <div class="container p-5" style="height: 20vh;">
-        <div class="row d-flex flex-row col-12 p-2">
-            <ul class="links">
-                <li class="col-2"><a href="">Ben_G</a></li>
-                <li class="col-2"><a href="">Ramiro</a></li>
-                <li class="col-2"><a href="">Developers_Institute</a></li>
-                <li class="col-2"><a href="">HACKATHON</a></li>
-            </ul>
+   
+
+
+    <!-- #################################### -->
+    <div class="container text-center" style="height: 100vh;">
+        <div class="row  navbar">
+          <div class="col-sm-2 col-md-6 col-lg-6 text-start">
+            <li id="logo" ></li>
+          </div>
+          <div class="col-sm-2 col-md-6 col-lg-6 text-end">
+            <p>Take A Guess</p>
+         
+          </div>
+         
         </div>
-    </div>
+        <div class="row two center p-5 mt-5 ">
+            <div class="col-12">
+                <!-- <marquee behavior="slide" direction="top" scrollamount="200">  -->
+                    <h6 class="display-3 zen">READY TO GUESS?</h6>
+                <!-- </marquee> -->
+            </div>
+            <div class="col-12">
+                <button id="startButton" type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#myModal">
+                    Start The Game
+                </button>
+            </div>
+          
+        </div>
+        <div class="row three links p-5 mt-5">
+            <div class="col-sm-12 col-md-6 col-lg-3">
+                <a href="">Ben_G</a>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-3">
+                <a href="">Ramiro</a>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-3">
+                <a href="">Developers_Institute</a>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-3">
+                <a href="">HACKATHON</a>
+            </div>
+        </div>
+      </div>
+    <!-- ################################## -->
 
     <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
