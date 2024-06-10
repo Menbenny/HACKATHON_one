@@ -24,6 +24,23 @@ body {
     margin: 5px;
     cursor: pointer;
   }
+
+  .letter-box {
+    display: inline-block;
+    width: 30px; /* Adjust the width as needed */
+    height: 30px; /* Adjust the height as needed */
+    border: 1px solid black;
+    margin-right: 5px; /* Adjust spacing between boxes */
+    text-align: center;
+    line-height: 30px; /* Align text vertically */
+    background-color: #ffc107; /* Yellow color */
+  }
+  
   #hint {
     margin-top: 20px;
+  }
+
+  .main {
+    background-color: rgba(255, 255, 255, 0.739);
+
   }

@@ -10,60 +10,96 @@
 <body>
 <div class="background" >
 
-    <div class="container center-content">
+    <div class="container center-content p-5 align-items-center">
 
 
-        <div class="heading row">
-            <div class="col-12">
-                <h1 class="welcomeMessage">WELCOME <span id="displayInput"></span></h1>
-            </div>
-        </div>
+        <!-- ############################################################# -->
+
+        <div class="container text-center">
             
-        <div class="main row">
-            <div class="GameName">
-                <h1>TAKE A GUESS</h1>
+            <div class="row p-5">
+                <div class="col">
+                  
+                    <h1 id="logo">
+
+                    </h1>
+            
+                </div>
+                <div class="col">
+                    <h1 class="welcomeMessage">WELCOME <span id="displayInput"></span></h1>
+                </div>
+                <div class="col">
+                    <h1 class="welcomeMessage"><em></em> <span id="displayInput"></span></h1>
+                </div>
             </div>
+
+            <div class="row p-5">
+
+                <!-- ! LEFT -->
+                <div class="col-12 col-md-12 col-lg-4 p-3">
+                    <div class="GameName ">
+                        <h1>TAKE A GUESS</h1>
+                    </div>
+                    <div class="Instrucions">
+                        <p>
+                            This game is made for beginning Hebrew learners 
+                        </p>
                     
-            <div class="description">
-                <h4>Guess an English word and it's Hebrew translation</h4>
-            </div>
-
-            <div class="Instrucions">
-                <p>Given the first letter of the word, guess the rest of the letters to complete the word</p>
-                <p>Click on Hint for Hints about the word</p>
-            </div>
-
-            <div class="winMessage">
-                <div id="winMessage"></div>
-                <div class="winMessage_2"></div>
-            </div>
-            
-            <div class="finalWin">
-                <div id="hebrewFinal"></div>
-            </div>
-
-            <div class="wordSpace">
-                <div class="word" id="word"></div>
-            </div>
-            <!--  -->
-            <div class="optionsDiv">
-                <div class="options" id="options"></div>
-            </div>
-            <!--  -->
-            <div class="buttons">
-                <div class="hint col-2">
-                    <button id="hint" onclick="showHint()">Hint</button>
-                    <div id="hintContainer"></div>
+                    </div>
+                    <!-- win messages -->
                 </div>
-                <div class="restart">
-                    <button id="start" onclick="initializeGame()">Restart</button>
-                </div>
-            </div>
+
+                <!-- ! CENTER -->
+                <div class="col-12 col-md-12 col-lg-4 p-5 main rounded-5">
+                    <div class="description">
+                        <h4>Guess an English word and then it's Hebrew translation</h4>
+                    </div>
+                    <div class="winMessage p-5">
+                        <div id="winMessage"></div>
+                        <div class="winMessage_2"></div>
+                    </div>
+                    
+                    <div class="finalWin">
+                        <div id="hebrewFinal"></div>
+                    </div>
         
+                    <div class="wordSpace p-5">
+                        <div class="word" id="word"></div>
+                    </div>
+                    <!--  -->
+                    <div class="optionsDiv">
+                        <div class="options" id="options"></div>
+                    </div>
+                    <div class="buttons">
+                    
+                        <div class="restart">
+                            <button id="start" onclick="initializeGame()">Restart</button>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- ! RIGHT -->
+                <div class="col-12 col-md-12 col-lg-4 p-3">
+                    <div class="Instrucions">
+                        <p>Given the first letter of the word, guess the rest of the letters to complete the word</p>
+                    
+                    </div>
+                    <p>Click on Hint for Hints about the word</p>
+                    <div class="hint col-2 p-5">
+                        <button id="hint" onclick="showHint()">Hint</button>
+                        <div id="hintContainer"></div>
+                    </div>
+                </div>
+            </div>
         </div>
+
+        <!-- ################################################################## -->
         
         <script src="gamescript.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <script src="logo.js"></script>
     </div>
 </div>
 </body>

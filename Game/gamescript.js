@@ -192,10 +192,7 @@ function showHint() {
       const hebrewFinal = document.getElementById('hebrewFinal')
       hebrewFinal.appendChild(finalWinMessage)
       
-      clear = () => {
-        hebrewFinal.removeChild()
-      }
-      setInterval(initializeGame(clear), 3000)
+      setInterval(initializeGame, 3000)
 
 
     } else {
