@@ -46,18 +46,31 @@
                         </p>
                     
                     </div>
-                    <!-- win messages -->
-                    <div class="winMessage p-5">
-                        <div id="winMessage"></div>
-                        <div class="winMessage_2"></div>
+
+                    
+                    <div  class="main rounded-3 p-5">
+                     <h5><b>Instructions</b></h5>   
+
+                     <p>Given the first letter of the word, guess the rest of the letters to complete the word</p>
+                     <div id="hebrewTranslation"></div>
                     </div>
+                    
                 </div>
 
                 <!-- ! CENTER -->
-                <div class="col-12 col-md-12 col-lg-4 p-5 rounded-5" id="main">
+                <div class="col-12 col-md-12 col-lg-4 p-5 rounded-5 main" >
                     <div class="description">
-                        <h4>Guess an English word and then it's Hebrew translation</h4>
+                        <h4>Guess the English in word</h4>
                     </div>
+
+                    <!-- win messages -->
+                    <div class="winMessage p-5 ">
+                        <div id="winMessage"></div>
+                        <br>
+                        <div class="winMessage_2"></div>
+                    </div>
+
+                    
                     
                     
                     <div class="finalWin">
@@ -68,7 +81,7 @@
                         <div class="word" id="word"></div>
                     </div>
                     <!--  -->
-                    <div class="optionsDiv p-5">
+                    <div class="optionsDiv p-2">
                         <div class="options p-2" id="options"></div>
                     </div>
                     <div class="buttons">
@@ -88,15 +101,15 @@
                         <h6><b>Player name:</b> <span id="displayInput"></span></h6>
                         <hr>
                     </div>
-                    <div class="Instrucions">
-                        <p>Given the first letter of the word, guess the rest of the letters to complete the word</p>
+                    <div class="Instrucions p-5">
+                       
                     
                     </div>
                     <p>Click on Hint for Hints about the word</p>
                     
                     <div class="row p-4">
                         <div class="hint col-12 p-5">
-                            <button class="btn btn-outline-warning" id="hint" onclick="showHint()">Hint</button>
+                            <button class="btn btn-outline-primary" id="hint" onclick="showHint()">Hint</button>
                             <div id="hintContainer"></div>
                         </div>
                     </div>

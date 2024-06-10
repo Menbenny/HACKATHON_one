@@ -54,6 +54,8 @@ function initializeGame() {
   document.getElementById('hintContainer').innerHTML = '';
   document.getElementById('winMessage').textContent = '';
   document.getElementById('options').innerHTML = '';
+  document.getElementById('hebrewFinal').innerHTML = '';
+  document.getElementById('hebrewTranslation').innerHTML = '';
 
   
   // document.removeEventListener('keydown', handleKeyPress);
@@ -110,11 +112,19 @@ function checkLetter(letter) {
 
   
   if (wordDisplay.indexOf('_') === -1) {
-    const winMessage = document.createElement('h6');
+    let winMessage = document.createElement('h1');
+    let hebrewMessage = document.createElement('h5')
+    winMessage.textContent = `Correct!`;
+    hebrewMessage.textContent = `Choose the correct Hebrew translation`
+    hebrewMessage.style.color = '#0d6efd'
 
-    winMessage.textContent = `Congratulations, you have guessed ${wordDisplay} correctly! Now, match it with the correct Hebrew translation.`;
     document.getElementById('winMessage').appendChild(winMessage);
-    setTimeout(showOptions, 1000); 
+
+    setTimeout(showOptions, 1000);
+    setInterval(document.getElementById('hebrewTranslation').appendChild(hebrewMessage), 5000)
+    
+    winMessage.style.color = 'green'
+    winMessage.style.fontSize = '2em'
   }
 }
 
@@ -189,12 +199,16 @@ function showHint() {
   function checkOption(selectedOption) {
     if (selectedOption === foodsHebrew[wordIndex]) {
    
-      const finalWinMessage = document.createElement('h1')
-      finalWinMessage.textContent = 'FINAL MESSAGE'
-      const hebrewFinal = document.getElementById('hebrewFinal')
+      let finalWinMessage = document.createElement('h1')
+      finalWinMessage.textContent = 'Translation Correct!'
+      finalWinMessage.style.color = 'green'
+
+      let hebrewFinal = document.getElementById('hebrewFinal')
+      hebrewFinal.innerHTML = '';
       hebrewFinal.appendChild(finalWinMessage)
       
-      setInterval(initializeGame, 3000)
+      setTimeout(initializeGame, 3000)
+      // setInterval(hebrewFinal.removeChild(finalWinMessage), 3000)
 
 
     } else {

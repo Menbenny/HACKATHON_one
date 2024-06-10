@@ -41,7 +41,7 @@ body {
   margin-top: 20px;
 }
 
-#main {
+.main {
 	background: linear-gradient(-45deg, #e9d39080, #ffe9a7, #ffffffc0, #ffffffad);
 	background-size: 400% 400%;
 	animation: gradient 15s ease infinite;
