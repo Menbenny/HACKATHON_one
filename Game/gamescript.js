@@ -6,10 +6,10 @@ const foodEnglish = [
   "Carrot", "Broccoli", "Spinach", "Cauliflower", "Bell Pepper", "Tomato", "Zucchini", "Eggplant", "Kale", "Cabbage"
 ];
 
-const foodsHebrew = [
+const foodHebrew = [
   "פיצה", "סושי", "טאקוס", "ספגטי", "ביריאני", "המבורגר", "פרייד צ'יקן", "פלאפל", "פאייה", "קימצ'י",
   "תפוח", "בננה", "תפוז", "תות שדה", "מנגו", "אננס", "ענבים", "אוכמנית", "אבטיח", "קיווי",
-  "גזר", "ברוקולי", "תרד", "כרובית", "פלפל", "עגבניה", "קישוא", "חציל", "כרוב עלים", "כרוב"
+  "גזר", "ברוקולי", "תרד", "כרובית", "גמבה", "עגבניה", "קישוא", "חציל", "כרוב עלים", "כרוב"
 ];
 
 
@@ -64,7 +64,7 @@ function initializeGame() {
   document.addEventListener('keydown', handleKeyPress);
 }
 
-let lists = foodEnglish + foodsHebrew
+let lists = foodEnglish + foodHebrew
 
 function handleKeyPress(event) {
   let letter = event.key.toUpperCase();
@@ -146,7 +146,8 @@ function showHint() {
   
   const hintParagraph = document.createElement('p');
   hintParagraph.textContent = hint;
-  
+  hintParagraph.style.color = '#0d6efd'
+  hintParagraph.style.fontWeight = 'bold'
   hintContainer.appendChild(hintParagraph);
 
   
@@ -162,14 +163,14 @@ function showHint() {
   optionsContainer.innerHTML = '';
 
   
-  let correctOption = foodsHebrew[wordIndex];
+  let correctOption = foodHebrew[wordIndex];
 
   let options = [correctOption];
 
   // ! review - why the options.push(randomOption)
   while (options.length < 3) {
-    let randomIndex = Math.floor(Math.random() * foodsHebrew.length);
-    let randomOption = foodsHebrew[randomIndex];
+    let randomIndex = Math.floor(Math.random() * foodHebrew.length);
+    let randomOption = foodHebrew[randomIndex];
 
     if (!options.includes(randomOption)) {
       options.push(randomOption);
@@ -193,11 +194,12 @@ function showHint() {
 }
 
 
+
 // Create a div with DOM and render the win messages inside the DOM
 
 
   function checkOption(selectedOption) {
-    if (selectedOption === foodsHebrew[wordIndex]) {
+    if (selectedOption === foodHebrew[wordIndex]) {
    
       let finalWinMessage = document.createElement('h1')
       finalWinMessage.textContent = 'Translation Correct!'
@@ -206,6 +208,14 @@ function showHint() {
       let hebrewFinal = document.getElementById('hebrewFinal')
       hebrewFinal.innerHTML = '';
       hebrewFinal.appendChild(finalWinMessage)
+
+      confetti({
+        particleCount: 200,
+        spread: 190,
+        origin: { y: 0.6 },
+        colors: ['#ffc107', '#0d6efd', '#ffffff', 'green']
+
+      });
       
       setTimeout(initializeGame, 5000)
       // setInterval(hebrewFinal.removeChild(finalWinMessage), 3000)

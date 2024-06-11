@@ -1,7 +1,9 @@
-GUESSING GAME
+TAG - Take A Guess 
+WORD - Word Translation - GUESSING GAME
 
-- Player prompt - is asked to guess a word, given a starting letter. If the player guesses correctly, another prompt to 
-guess the Hebrew translation correctly.    
+- TAG is a game created to assist beginners Hebrew learners 
 
-Implementing DOM to render html tags essential
-for functionality of the game
+- Fun and interactive user interface to learn everyday used Hebrew nouns. 
+
+- Current version requires cloning the github repo to your local machine 
+and rendering the /opening.html through a code editor
