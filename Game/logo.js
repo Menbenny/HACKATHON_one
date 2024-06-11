@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const logoElement = document.getElementById('logo');
     let isTyping = true;
 
-    logoElement.style.fontSize = '2em'
+    logoElement.style.fontSize = '.9em'
     logoElement.style.fontWeight = 'Bold'
 
     

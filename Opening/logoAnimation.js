@@ -1,10 +1,10 @@
 // LOGO ANIMATION
 document.addEventListener('DOMContentLoaded', function() {
-    const logoText = "  T  A  G  "; //
+    const logoText = "  T  A  G  "; 
     const logoElement = document.getElementById('logo');
     let isTyping = true;
 
-    logoElement.style.fontSize = '1em'
+    logoElement.style.fontSize = '3em'
     logoElement.style.fontWeight = 'Bold'
 
     
