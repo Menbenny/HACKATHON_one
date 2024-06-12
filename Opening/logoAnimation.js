@@ -1,19 +1,19 @@
 // LOGO ANIMATION
+
 document.addEventListener('DOMContentLoaded', function() {
     const logoText = "  T  A  G  "; 
     const logoElement = document.getElementById('logo');
+    const logoTextWithUnderscores = logoText.replace(/ /g, '_');
+
     let isTyping = true;
 
     logoElement.style.fontSize = '3em'
     logoElement.style.fontWeight = 'Bold'
-
-    
     logoElement.textContent = '';
 
     
-    const logoTextWithUnderscores = logoText.replace(/ /g, '_');
 
-    // Typing animation function
+    
     function typeText(index) {
         if (isTyping) {
             if (index < logoTextWithUnderscores.length) {
@@ -21,12 +21,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 logoElement.textContent += char === '_' ? '_' : char;
                 setTimeout(function() {
                     typeText(index + 1);
-                }, 200); // Adjust typing speed here (in milliseconds)
+                }, 200);
             } else {
                 isTyping = false;
                 setTimeout(function() {
                     typeText(index - 1);
-                }, 1000); // Delay before erasing (in milliseconds)
+                }, 1000);
             }
         } else {
             if (index >= 0) {
@@ -34,22 +34,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 logoElement.textContent = logoElement.textContent.slice(0, -1);
                 setTimeout(function() {
                     typeText(index - 1);
-                }, 100); // Adjust erasing speed here (in milliseconds)
+                }, 100);
             } else {
                 isTyping = true;
                 setTimeout(function() {
                     typeText(0);
-                }, 1000); // Delay before typing again (in milliseconds)
+                }, 1000);
             }
         }
     }
-
-    // Start typing animation
     typeText(0);
 });
-
-// Falling letter animation 
-
 
 document.addEventListener("DOMContentLoaded", function() {
     const container = document.querySelector('.falling-letters');

@@ -1,5 +1,3 @@
-
-
 const foodEnglish = [
   "Pizza", "Sushi", "Tacos", "Spaghetti", "Biryani", "Burger", "Fried Chicken", "Falafel", "Paella", "Kimchi",
   "Apple", "Banana", "Orange", "Strawberry", "Mango", "Pineapple", "Grapes", "Blueberry", "Watermelon", "Kiwi", 
@@ -12,33 +10,25 @@ const foodHebrew = [
   "גזר", "ברוקולי", "תרד", "כרובית", "גמבה", "עגבניה", "קישוא", "חציל", "כרוב עלים", "כרוב"
 ];
 
-
-
 // global 
 let word = '';
 let guessedLetters = [];
 let wordIndex;
 
 const playerName = localStorage.getItem('userName');
-        
-
 const playerNameElement = document.getElementById('displayInput');
+        
 playerNameElement.textContent = `${playerName}`;
-
 playerNameElement.style.color = '#0d6efd';
 playerNameElement.style.fontWeight = 'bold';
 playerNameElement.style.fontFamily = ''
 
-
 function initializeGame() {
 
-  
-  
   wordIndex = Math.floor(Math.random() * foodEnglish.length);
   word = foodEnglish[wordIndex].toUpperCase();
   guessedLetters = [];
 
-  
   let wordDisplay = word[0];
   for (let i = 1; i < word.length; i++) {
     if (word[i] === ' ') {
@@ -49,18 +39,11 @@ function initializeGame() {
   }
 
   document.getElementById('word').textContent = wordDisplay;
-
-  
   document.getElementById('hintContainer').innerHTML = '';
   document.getElementById('winMessage').textContent = '';
   document.getElementById('options').innerHTML = '';
   document.getElementById('hebrewFinal').innerHTML = '';
   document.getElementById('hebrewTranslation').innerHTML = '';
-
-  
-  // document.removeEventListener('keydown', handleKeyPress);
-
-  
   document.addEventListener('keydown', handleKeyPress);
 }
 
@@ -82,12 +65,10 @@ function checkLetter(letter) {
     return;
   }
 
-
-
   guessedLetters.push(letter);
   let wordDisplay = word[0];
-  
   let found = false;
+  
   for (let i = 1; i < word.length; i++) {
     if (word[i] === letter) {
       wordDisplay += letter;
@@ -102,13 +83,22 @@ function checkLetter(letter) {
   }
   document.getElementById('word').textContent = wordDisplay;
 
+  const maxAttempts = 3;
+
+  let attempts = 0;
+  
   if (!found) {
+    attempts++; 
     alert('Incorrect guess: ' + letter);
+    if (attempts >= maxAttempts) {
+      alert(`You lose, start again`)
+    // return initializeGame()
+    }
   }
 
 
   // ! What does the last index (-1) have to do with guessing correctly.
-  // ? Answer: if wordDisplay doesn't include ('_')
+  // * Answer: if wordDisplay doesn't include ('_')
 
   
   if (wordDisplay.indexOf('_') === -1) {
@@ -126,7 +116,7 @@ function checkLetter(letter) {
     winMessage.style.color = 'green'
     winMessage.style.fontSize = '2em'
   }
-}
+} // * End of function
 
 function showHint() {
 
@@ -139,12 +129,10 @@ function showHint() {
   } else if (wordIndex >= 20 && wordIndex < 30) {
     hint = 'It\'s a type of vegetable.';
   }
-
   
   const hintContainer = document.getElementById('hintContainer');
- 
-  
   const hintParagraph = document.createElement('p');
+  
   hintParagraph.textContent = hint;
   hintParagraph.style.color = '#0d6efd'
   hintParagraph.style.fontWeight = 'bold'
@@ -156,31 +144,25 @@ function showHint() {
   }, 5000);
 }
 
-
-
-  function showOptions() {
+function showOptions() {
   const optionsContainer = document.getElementById('options');
   optionsContainer.innerHTML = '';
 
-  
   let correctOption = foodHebrew[wordIndex];
-
   let options = [correctOption];
-
+  
   // ! review - why the options.push(randomOption)
-  while (options.length < 3) {
-    let randomIndex = Math.floor(Math.random() * foodHebrew.length);
-    let randomOption = foodHebrew[randomIndex];
+    while (options.length < 3) {
+      let randomIndex = Math.floor(Math.random() * foodHebrew.length);
+      let randomOption = foodHebrew[randomIndex];
 
-    if (!options.includes(randomOption)) {
-      options.push(randomOption);
+      if (!options.includes(randomOption)) {
+        options.push(randomOption);
+      }
     }
-  }
 
   
   options = options.sort(() => Math.random() - 0.5);
-
-  // This creates buttons for the hebrew options 
 
   options.forEach(option => {
     let button = document.createElement('button');
@@ -193,45 +175,37 @@ function showHint() {
   });
 }
 
+function checkOption(selectedOption) {
+  if (selectedOption === foodHebrew[wordIndex]) {
 
+    let finalWinMessage = document.createElement('h1')
+    finalWinMessage.textContent = 'Translation Correct!'
+    finalWinMessage.style.color = 'green'
 
-// Create a div with DOM and render the win messages inside the DOM
+    let hebrewFinal = document.getElementById('hebrewFinal')
+    hebrewFinal.innerHTML = '';
+    hebrewFinal.appendChild(finalWinMessage)
 
+    confetti({
+      particleCount: 200,
+      spread: 190,
+      origin: { y: 0.6 },
+      colors: ['#ffc107', '#0d6efd', '#ffffff', 'green']
 
-  function checkOption(selectedOption) {
-    if (selectedOption === foodHebrew[wordIndex]) {
-   
-      let finalWinMessage = document.createElement('h1')
-      finalWinMessage.textContent = 'Translation Correct!'
-      finalWinMessage.style.color = 'green'
-
-      let hebrewFinal = document.getElementById('hebrewFinal')
-      hebrewFinal.innerHTML = '';
-      hebrewFinal.appendChild(finalWinMessage)
-
-      confetti({
-        particleCount: 200,
-        spread: 190,
-        origin: { y: 0.6 },
-        colors: ['#ffc107', '#0d6efd', '#ffffff', 'green']
-
-      });
-      
-      setTimeout(initializeGame, 5000)
-      // setInterval(hebrewFinal.removeChild(finalWinMessage), 3000)
-
-
-    } else {
+    });
     
+    setTimeout(initializeGame, 5000)
 
-      const looseMessage = document.createElement('h1')
-      looseMessage.textContent = 'Incorrect. Try again.'
-      winDiv.appendChild(looseMessage)
 
-      showOptions();
-    }
-    
+  } else {
+    const looseMessage = document.createElement('h1')
+    looseMessage.textContent = 'Incorrect. Try again.'
+    winDiv.appendChild(looseMessage)
+
+    showOptions();
   }
+  
+}
 
 
 initializeGame();
