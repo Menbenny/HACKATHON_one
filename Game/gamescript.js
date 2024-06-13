@@ -55,7 +55,7 @@ function handleKeyPress(event) {
   if ( /^[a-zA-Z]+$/.test(letter)) {
     checkLetter(letter);
   }
-
+  
   // ! Exclude other keys. Only listen on key letters 
 }
 
@@ -92,7 +92,6 @@ function checkLetter(letter) {
     alert('Incorrect guess: ' + letter);
     if (attempts >= maxAttempts) {
       alert(`You lose, start again`)
-    // return initializeGame()
     }
   }
 
@@ -151,7 +150,7 @@ function showOptions() {
   let correctOption = foodHebrew[wordIndex];
   let options = [correctOption];
   
-  // ! review - why the options.push(randomOption)
+
     while (options.length < 3) {
       let randomIndex = Math.floor(Math.random() * foodHebrew.length);
       let randomOption = foodHebrew[randomIndex];
